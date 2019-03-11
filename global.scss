@@ -1,0 +1,90 @@
+//global css
+
+// css变量
+$browser-default-font-size: 16 !default;//变量的值可以根据自己需求定义
+$wx-color: rgb(74, 119, 176);
+$primary-color: #3C6DE2;//基色
+$border-color: #F3F4F5;//背景颜色
+$c6: rgb(102,102,102);//网站其他固定色变量
+$s12:toRem(12);//字体大小
+$s14:toRem(14);//字体大小
+// 根字体大小
+html { font-size: ($browser-default-font-size) + px;}
+//自定义函数
+@function toRem($px){
+  @return ($px/$browser-default-font-size) + rem;
+}
+//媒体查询
+@media only screen and (max-width: 1024px),
+only screen and (max-device-width: 1024px) {
+  html,
+  body {
+    font-size: ($browser-default-font-size )/ (375 / 1024) * 1px;
+  }
+}
+@media only screen and (max-width: 768px),
+only screen and (max-device-width: 768px) {
+  html,
+  body {
+    font-size: $browser-default-font-size / (375 / 768) * 1px;
+  }
+}
+@media only screen and (max-width: 414px),
+only screen and (max-device-width: 414px) {
+  html,
+  body {
+    font-size: $browser-default-font-size / (375 / 414) * 1px;
+  }
+}
+@media only screen and (max-width:414px),
+only screen and (max-device-width: 375px) {
+  html,
+  body {
+    font-size: $browser-default-font-size + px;
+  }
+}
+@media only screen and (max-width: 360px),
+only screen and (max-device-width: 360px) {
+  html,
+  body {
+    font-size: $browser-default-font-size / (375 / 360) * 1px;
+  }
+}
+@media only screen and (max-width: 320px),
+only screen and (max-device-width: 320px) {
+  html,
+  body {
+    font-size: $browser-default-font-size / (375 / 320) * 1px;
+  }
+}
+
+
+// reset css
+* {
+  box-sizing: border-box;
+}
+html, body, #root {
+  height: 100%;
+  width: 100vw;
+  overflow-x: hidden;
+}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td { margin:0; padding:0; }
+td,th,caption { font-size:14px; }
+h1, h2, h3, h4, h5, h6 { font-size:100%; }
+address, caption, cite, code, dfn, em, strong, th, var { font-style:normal; font-weight:normal;}
+a { text-decoration:none; color: unset }
+a:hover { text-decoration:none; }
+img { border:none; }
+ol,ul,li { list-style:none; }
+input, textarea, select, button { font:14px "Arial","Microsoft YaHei","黑体","宋体",sans-serif; }
+table { border-collapse:collapse; }
+body{background: white; position: relative;}
+
+// 公共类
+.clearfix:after {content: "."; display: block; height:0; clear:both; visibility: hidden;}
+.clearfix { *zoom:1; }/*公共类*/
+.fl { float:left}
+.fr {float:right}
+.al {text-align:left}
+.ac {text-align:center}
+.ar {text-align:right}
